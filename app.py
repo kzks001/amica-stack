@@ -2,12 +2,15 @@ import chainlit as cl
 
 
 @cl.on_chat_start
-async def on_start():
-    await cl.Message("Hello world from AWS!").send()
+async def start():
+    pass
 
 
 @cl.on_message
-async def on_message(message: cl.Message):
+async def main(message: cl.Message):
+    # Your custom logic goes here...
+
+    # Send a response back to the user
     await cl.Message(
-        f"Received message: {message.content}. This demo is all about deploying your Chainlit app on AWS ECS, nothing else!"
+        content=f"Received: {message.content}",
     ).send()
