@@ -38,4 +38,4 @@ WORKDIR /app
 EXPOSE 8080
 
 # Use uv run to execute the application
-CMD ["uv", "run", "python", "-m", "chainlit", "run", "app.py", "-h", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uv", "run", "python", "-m", "chainlit", "run", "chainlit_rag_app.py", "-h", "--host", "0.0.0.0", "--port", "8080"]

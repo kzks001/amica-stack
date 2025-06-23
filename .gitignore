@@ -135,3 +135,5 @@ credentials.json
 # Local development files
 local/
 dev/
+
+data/chroma*

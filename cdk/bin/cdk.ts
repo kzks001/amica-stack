@@ -11,7 +11,7 @@ new CdkStack(app, 'AmicaStackStack', {
   /* Uncomment the next line to specialize this stack for the AWS Account
    * and Region that are implied by the current CLI configuration. */
   env: { 
-    account: '074797805133', 
+    account: '834022435930', 
     region: 'ap-southeast-1' 
   },
 

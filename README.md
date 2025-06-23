@@ -21,7 +21,7 @@ Edit `cdk/bin/cdk.ts` and replace `074797805133` with your AWS account ID.
 
 ```bash
 cd cdk
-cdk bootstrap aws://YOUR-ACCOUNT-ID/ap-southeast-1
+cdk bootstrap aws://834022435930/ap-southeast-1
 ```
 
 ### 3. Install Dependencies
@@ -45,12 +45,12 @@ Note the outputs: `RepositoryUri` and `CloudFrontDomainName`.
 
 ```bash
 # Login to ECR
-aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin YOUR-ACCOUNT-ID.dkr.ecr.ap-southeast-1.amazonaws.com
+aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 834022435930.dkr.ecr.ap-southeast-1.amazonaws.com
 
 # Build and push (ensure correct platform for ECS Fargate)
 docker build --platform linux/amd64 -t amica-stack .
-docker tag amica-stack:latest YOUR-ACCOUNT-ID.dkr.ecr.ap-southeast-1.amazonaws.com/amica-stack:latest
-docker push YOUR-ACCOUNT-ID.dkr.ecr.ap-southeast-1.amazonaws.com/amica-stack:latest
+docker tag amica-stack:latest 834022435930.dkr.ecr.ap-southeast-1.amazonaws.com/amica-stack:latest
+docker push 834022435930.dkr.ecr.ap-southeast-1.amazonaws.com/amica-stack:latest
 ```
 
 ### 6. Deploy Application
@@ -78,11 +78,11 @@ Visit `http://localhost:8000` to test locally.
    docker build --platform linux/amd64 -t amica-stack .
    
    # Login to ECR (if not already logged in)
-   aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin YOUR-ACCOUNT-ID.dkr.ecr.ap-southeast-1.amazonaws.com
+   aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 834022435930.dkr.ecr.ap-southeast-1.amazonaws.com
    
    # Tag and push
-   docker tag amica-stack:latest YOUR-ACCOUNT-ID.dkr.ecr.ap-southeast-1.amazonaws.com/amica-stack:latest
-   docker push YOUR-ACCOUNT-ID.dkr.ecr.ap-southeast-1.amazonaws.com/amica-stack:latest
+   docker tag amica-stack:latest 834022435930.dkr.ecr.ap-southeast-1.amazonaws.com/amica-stack:latest
+   docker push 834022435930.dkr.ecr.ap-southeast-1.amazonaws.com/amica-stack:latest
    ```
 3. Deploy the updated application using CDK (recommended):
    ```bash
